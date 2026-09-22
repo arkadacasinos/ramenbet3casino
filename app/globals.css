@@ -1,0 +1,105 @@
+@import 'tailwindcss';
+
+@theme inline {
+  --color-casino-emerald: #1a4d3f;
+  --color-casino-cream: #f5f0e8;
+  --color-casino-saffron: #d4a574;
+  --color-casino-dark: #0f2818;
+  --color-casino-light: #faf8f5;
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-mono: 'Courier New', monospace;
+}
+
+:root {
+  --casino-emerald: #1a4d3f;
+  --casino-cream: #f5f0e8;
+  --casino-saffron: #d4a574;
+  --casino-dark: #0f2818;
+  --casino-light: #faf8f5;
+  
+  color-scheme: light dark;
+}
+
+@layer base {
+  body {
+    @apply bg-casino-light text-casino-dark font-sans antialiased;
+  }
+  
+  h1 { @apply text-4xl md:text-5xl font-bold leading-snug text-casino-emerald; }
+  h2 { @apply text-2xl md:text-3xl font-bold leading-snug text-casino-emerald my-6; }
+  h3 { @apply text-lg md:text-xl font-semibold text-casino-dark; }
+  p { @apply leading-relaxed text-casino-dark/85; }
+  a { @apply text-casino-saffron underline hover:text-casino-emerald transition-colors; }
+}
+
+@layer components {
+  .casino_hero_section {
+    @apply relative w-full bg-gradient-to-b from-casino-emerald to-casino-dark text-casino-light min-h-screen flex flex-col items-center justify-center px-4 py-16 md:py-24;
+  }
+  
+  .casino_hero_inner {
+    @apply max-w-4xl w-full flex flex-col gap-8 items-center text-center;
+  }
+  
+  .casino_hero_headline {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-casino-cream mb-4;
+  }
+  
+  .casino_hero_subtext {
+    @apply text-lg md:text-xl text-casino-cream/90 mb-8 max-w-2xl;
+  }
+  
+  .casino_hero_image {
+    @apply w-full max-w-md h-auto rounded-lg shadow-2xl;
+  }
+  
+  .casino_content_section {
+    @apply w-full bg-casino-light px-4 py-12 md:py-16;
+  }
+  
+  .casino_content_container {
+    @apply max-w-4xl mx-auto;
+  }
+  
+  .casino_section_head {
+    @apply text-3xl md:text-4xl font-bold text-casino-emerald mb-6;
+  }
+  
+  .casino_article_block {
+    @apply mb-8 p-6 bg-casino-cream/50 rounded-lg border-l-4 border-casino-saffron;
+  }
+  
+  .casino_keyword_context {
+    @apply text-casino-dark/75 text-sm md:text-base leading-relaxed;
+  }
+  
+  .casino_cta_button {
+    @apply inline-block px-8 py-4 bg-casino-saffron text-casino-dark font-bold rounded-lg hover:bg-casino-emerald hover:text-casino-cream transition-all duration-300 shadow-md hover:shadow-lg;
+  }
+  
+  .casino_footer_section {
+    @apply w-full bg-casino-emerald text-casino-light px-4 py-12;
+  }
+  
+  .casino_footer_inner {
+    @apply max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8;
+  }
+  
+  .casino_footer_column {
+    @apply flex flex-col gap-3;
+  }
+  
+  .casino_hashtag_grid {
+    @apply flex flex-wrap gap-2 mt-6;
+  }
+  
+  .casino_hashtag_link {
+    @apply inline-block px-3 py-1 bg-casino-saffron/20 text-casino-saffron text-sm rounded-full hover:bg-casino-saffron hover:text-casino-emerald transition-all;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    @apply bg-casino-dark text-casino-cream;
+  }
+}
